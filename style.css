@@ -1,0 +1,43 @@
+  class.cer{
+    background-color: lightgrey;
+    width: 300px;
+    border: 1px solid green;
+    padding: 5px;
+    margin: 5px;
+  }
+
+  ul.a{
+    list-style-type: square;
+  }
+
+  .contato-info p {
+    line-height: 1.2;
+    margin-bottom: 1px;
+  }
+
+  .contato-info i {
+    vertical-align: middle;
+    font-size: 7px;
+  }
+
+  .foto-perfil {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #009688;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .w3-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .w3-tag {
+    margin: 5px 0;
+  }
+  
