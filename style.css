@@ -1,43 +1,356 @@
-  class.cer{
-    background-color: lightgrey;
-    width: 300px;
-    border: 1px solid green;
-    padding: 5px;
-    margin: 5px;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding-top: 80px; /* Espaço para a navbar fixa */
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.navbar nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #0077cc;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #005fa3;
+}
+
+/* Sections */
+.section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  scroll-margin-top: 80px; /* Ajusta a posição ao rolar para a seção */
+}
+
+.navbar {
+  padding: 3px 20px; /* Reduz a altura da navbar */
+}
+
+.navbar nav a {
+  cursor: pointer;
+}
+
+.navbar nav a[href^="#"] {
+  scroll-behavior: smooth; /* Suaviza o scroll ao clicar no menu */
+}
+
+.section h1, .section h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.section p, .section ul {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+/* Skills Chips */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skills span {
+  background-color: #e0f7fa;
+  color: #006064;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  ul.a{
-    list-style-type: square;
+  .navbar nav {
+    margin-top: 10px;
   }
 
-  .contato-info p {
-    line-height: 1.2;
-    margin-bottom: 1px;
-  }
-
-  .contato-info i {
-    vertical-align: middle;
-    font-size: 7px;
-  }
-
-  .foto-perfil {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #009688;
+  .navbar nav a {
     display: block;
-    margin: 20px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
   }
 
-  .w3-panel {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  .skills {
     justify-content: center;
   }
-  .w3-tag {
-    margin: 5px 0;
+}
+
+/* Botão de Download */
+.botao-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #0a66c2, #004182);
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 10px;
+  border-radius: 12px;
+  font-weight: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.botao-download {
+  position: fixed;
+  top: 65px; /* Distância do nav bar*/
+  left: 10px; /* Distância da borda esquerda */
+  z-index: 1001; /* Aumentado para garantir que fique acima de outros elementos */
+}
+
+.botao-download:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transform: scale(1.03);
+}
+
+.botao-download .icone {
+  fill: #fff;
+}
+
+/* Formulário de Contato "Vamos trabalhar juntos"*/
+.contact-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+.contact-section p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.contact-button,
+.whatsapp-button {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.contact-button {
+  background-color: #222;
+  color: #fff;
+}
+.contact-button:hover {
+  background-color: #444;
+}
+
+/* Formulário de Contato*/
+#contato {
+  background-color: #f8f9fa; /* Tom de fundo claro e suave */
+  border-radius: 10px;
+  padding: 1rem; /* Reduzido o padding para diminuir a altura */
+  max-width: 700px;
+  margin: 2rem auto; /* Reduzido o margin para ajustar o espaço externo */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e9ecef; /* Borda clara */
+}
+
+.contato-titulo {
+  color: #495057; /* Cor do título suave */
+  font-size: 2.2rem; /* Título um pouco maior */
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center; /* Centralizar o título */
+  letter-spacing: -0.05rem; /* Ajuste no espaçamento entre letras */
+  position: relative;
+  padding-bottom: 0.50rem;
+}
+
+.contato-titulo::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%); /* Centralizar a linha */
+  width: 60px;
+  height: 2px;
+  background-color: #007bff; /* Cor de destaque */
+}
+
+#contato ul {
+  list-style-type: none; /* Remove os marcadores da lista */
+  padding: 0; /* Remove o padding padrão da lista */
+  margin: 0; /* Remove a margem padrão da lista */
+}
+
+.contato-item {
+  padding: 0.5rem 0; /* Reduz o padding vertical para aproximar os itens */
+  border-bottom: 1px solid #dee2e6; /* Linha de separação suave */
+  display: flex;
+  align-items: center;
+  gap: 1.0rem; /* Espaço entre ícone e texto */
+}
+
+.contato-item:last-child {
+  border-bottom: none;
+}
+
+.contato-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.icone-contato {
+  width: 26px;
+  height: 26px;
+  fill: #6c757d; /* Cor dos ícones discreta */
+  transition: transform 0.2s ease-in-out;
+}
+
+.contato-item:hover .icone-contato {
+  transform: scale(1.1); /* Efeito de hover sutil */
+}
+
+.contato-item a,
+.contato-item span {
+  color: #343a40; /* Cor do texto principal */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 400; /* Peso da fonte normal */
+  line-height: 1.6; /* Espaçamento entre linhas */
+  transition: color 0.2s ease-in-out;
+}
+
+.contato-item a:hover {
+  color: #007bff; /* Destaque sutil no hover dos links */
+}
+
+.whatsapp-button {
+  background-color: #25D366;
+  color: white;
+}
+
+.whatsapp-button:hover {
+  background-color: #1ebe5d;
+}
+
+.location {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.navbar, .skills span, .footer, .btn-download, .btn-enviar {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.1rem;
+}
+
+a svg {
+  margin-right: 8px;
+  fill: currentColor;
+  transition: transform 0.3s ease;
+}
+
+a:hover svg {
+  transform: scale(1.1); /* Aumenta ligeiramente o ícone quando passa o mouse */
+}
+
+a:hover {
+  color: #0e76a8; /* Cor do texto ao passar o mouse (LinkedIn) */
+}
+
+a:focus {
+  outline: none; /* Remove contorno de foco */
+}
+
+.logo img {
+  width: 50px; /* Define a largura da logo */
+  height: 50px; /* Define a altura igual à largura para formar um círculo */
+  border-radius: 50%; /* Torna a imagem circular */
+  object-fit: cover; /* Garante que a imagem se ajuste ao círculo */
+  display: inline-block; /* Permite que a logo fique ao lado do texto */
+  margin-right: 15px; /* Espaço entre a logo e o nome */
+  transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.Navbar{
+  display: flex;
+  align-items: center; /* Alinha a logo e o nome verticalmente */
+  margin-top: -5px; 
+}
+
+.logo img:hover {
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+}
+
+  .navbar, .footer {
+    color:rgb(0, 0, 0);
   }
-  
+
+  .btn-theme {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
