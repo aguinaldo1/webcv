@@ -101,23 +101,217 @@ ul {
 }
 
 /* Responsivo */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 20px; /* Ajusta o padding para telas médias */
+  }
+
+  .section {
+    padding: 50px 15px; /* Reduz o padding para seções */
+  }
+
+  .skills {
+    gap: 12px; /* Ajusta o espaçamento entre os chips */
+    flex-wrap: nowrap; /* Impede que os chips quebrem linha */
+    overflow-x: auto; /* Adiciona rolagem horizontal se necessário */
+  }
+
+  .skills span {
+    white-space: nowrap; /* Garante que o texto dos chips não quebre linha */
+  }
+
+  .contact-section h2 {
+    font-size: 2rem; /* Reduz o tamanho do título */
+  }
+
+  .contact-section p {
+    font-size: 1rem; /* Ajusta o tamanho do texto */
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+    padding: 10px 15px; /* Ajusta o padding para telas menores */
   }
 
   .navbar nav {
-    margin-top: 10px;
+    margin-top: 15px;
+    width: 100%; /* Garante que o menu ocupe toda a largura */
   }
 
   .navbar nav a {
     display: block;
-    margin: 10px 0;
+    margin: 8px 0;
+    text-align: left; /* Alinha os links à esquerda */
   }
 
   .skills {
     justify-content: center;
+    gap: 8px; /* Reduz o espaçamento entre os chips */
+  }
+
+  .section {
+    padding: 40px 15px; /* Reduz o padding das seções */
+  }
+
+  .contact-section {
+    padding: 40px 10px; /* Ajusta o padding da seção de contato para menor largura */
+  }
+
+  .contact-container {
+    max-width: 90%; /* Reduz a largura máxima do container de contato */
+  }
+
+  .contact-links {
+    flex-direction: column; /* Empilha os botões verticalmente */
+    gap: 15px; /* Ajusta o espaçamento entre os botões */
+  }
+
+  .botao-download {
+    position: static; /* Remove a posição fixa */
+    margin: 20px auto; /* Centraliza o botão horizontalmente */
+    display: block; /* Garante que o botão ocupe uma linha */
+    padding: 10px 8px; /* Reduz o padding para telas menores */
+  }
+
+  .sobre-section {
+    display: block; /* Garante que a aba sobre apareça */
+    padding: 40px 15px; /* Ajusta o padding da seção sobre */
+  }
+
+  /* Menu suspenso retrátil */
+  .navbar {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .navbar.hidden {
+    transform: translateY(-100%); /* Esconde o menu ao rolar para baixo */
+    opacity: 0; /* Torna o menu invisível */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center; /* Centraliza a logo e os links */
+    padding: 10px 15px; /* Ajusta o padding para telas muito pequenas */
+  }
+
+  .navbar .logo {
+    font-size: 1.2rem; /* Mantém a logo legível */
+    margin-bottom: 10px; /* Espaço entre a logo e os links */
+    text-align: center; /* Centraliza o texto da logo */
+  }
+
+  .navbar nav {
+    width: 100%; /* Garante que os links ocupem toda a largura */
+    text-align: center; /* Centraliza os links */
+  }
+
+  .navbar nav a {
+    display: inline-block; /* Mantém os links em linha */
+    margin: 5px 10px; /* Ajusta o espaçamento entre os links */
+    font-size: 1rem; /* Mantém o tamanho da fonte legível */
+  }
+
+  .section h1, .section h2 {
+    font-size: 1.5rem; /* Ajusta o tamanho dos títulos */
+    text-align: center; /* Centraliza os títulos */
+  }
+
+  .section p, .section ul {
+    font-size: 0.9rem; /* Ajusta o tamanho do texto */
+    text-align: justify; /* Melhora a legibilidade do texto */
+  }
+
+  .skills {
+    flex-direction: column; /* Empilha os chips verticalmente */
+    align-items: center; /* Centraliza os chips */
+    gap: 8px; /* Ajusta o espaçamento entre os chips */
+  }
+
+  .skills span {
+    font-size: 0.85rem; /* Ajusta o tamanho dos chips */
+    padding: 6px 10px; /* Ajusta o padding dos chips */
+  }
+
+  .contact-section h2 {
+    font-size: 1.8rem; /* Ajusta o tamanho do título */
+    text-align: center; /* Centraliza o título */
+  }
+
+  .contact-section p {
+    font-size: 0.9rem; /* Ajusta o tamanho do texto */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .botao-download {
+    padding: 8px 10px; /* Ajusta o padding do botão */
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+    position: static; /* Remove a posição fixa */
+    margin: 10px auto; /* Centraliza o botão */
+    display: block; /* Garante que o botão ocupe uma linha */
+  }
+
+  .sobre-section {
+    padding: 20px 15px; /* Ajusta o padding da seção sobre */
+    text-align: center; /* Centraliza o conteúdo */
+  }
+
+  .contact-links {
+    flex-direction: column; /* Empilha os botões verticalmente */
+    gap: 12px; /* Ajusta o espaçamento entre os botões */
+    align-items: center; /* Centraliza os botões */
+  }
+
+  .footer {
+    font-size: 0.8rem; /* Ajusta o tamanho do texto do rodapé */
+    padding: 15px; /* Ajusta o padding do rodapé */
+    text-align: center; /* Centraliza o texto do rodapé */
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px; /* Adjust padding for smaller screens */
+  }
+
+  .navbar nav {
+    margin-top: 15px;
+    width: 100%; /* Ensure nav takes full width */
+  }
+
+  .navbar nav a {
+    display: block;
+    margin: 8px 0;
+    text-align: left; /* Align links to the left */
+  }
+
+  .skills {
+    justify-content: center;
+    gap: 8px; /* Reduce gap between skill chips */
+  }
+
+  .section {
+    padding: 40px 15px; /* Reduce padding for sections */
+  }
+
+  .contact-section {
+    padding: 40px 15px; /* Adjust contact section padding */
+  }
+
+  .contact-links {
+    flex-direction: column; /* Stack contact buttons vertically */
+    gap: 15px; /* Adjust spacing between buttons */
+  }
+
+  .botao-download {
+    top: 90px; /* Adjust position for download button */
+    right 15px; /* Adjust left margin */
+    padding: 10px 8px; /* Reduce padding for smaller screens */
   }
 }
 
