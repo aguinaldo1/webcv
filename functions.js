@@ -25,7 +25,7 @@ document.addEventListener('scroll', () => {
     }
 });
 function copiarEmail() {
-    const email = "seuemail@exemplo.com"; // Substitua pelo email desejado
+    const email = "aguinaldoamerico2@gmail.com"; // Substitua pelo email desejado
     navigator.clipboard.writeText(email).then(() => {
         exibirMensagem("Email copiado com sucesso!", true);
     }).catch(() => {
