@@ -9,8 +9,9 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  background-color: #f9f9f9;
+  background-color: #f4f4f4;
   padding-top: 80px; /* Espaço para a navbar fixa */
+  scroll-behavior: smooth; /* ← Ativa o scroll suave globalmente */
 }
 
 /* Navbar */
@@ -46,7 +47,7 @@ body {
 /* Sections */
 .section {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: auto;
   padding: 60px 20px;
   scroll-margin-top: 80px; /* Ajusta a posição ao rolar para a seção */
 }
@@ -258,6 +259,7 @@ ul {
   .sobre-section {
     padding: 20px 15px; /* Ajusta o padding da seção sobre */
     text-align: center; /* Centraliza o conteúdo */
+    padding-top: 90px; /* ← Espaço extra para não ficar atrás do header */
   }
 
   .contact-links {
@@ -293,6 +295,7 @@ ul {
   .skills {
     justify-content: center;
     gap: 8px; /* Reduce gap between skill chips */
+    padding-top: 1000px; /* ← Espaço extra para não ficar atrás do header */
   }
 
   .section {
@@ -547,4 +550,84 @@ a:focus {
     font-size: 1.2rem;
     cursor: pointer;
   }
+
+/* Seção Meus Projetos */
+#projetos {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+}
+
+#projetos h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 65px;
+  color: #333;
+  padding-top: 90px; /* ← Espaço extra para não ficar atrás do header */
+}
+
+/* Container dos projetos */
+.projetos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Card de projeto */
+.projeto-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  width: 200px; /* Cartões menores */
+  min-height: 220px; /* Altura mínima para manter espaço */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Empurra o link para o fundo */
+  transition: transform 0.2s ease;
+}
+
+.projeto-card:hover {
+  transform: translateY(-3px);
+}
+
+.projeto-card h3 {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #007BFF;
+  flex: 1;
+}
+
+.projeto-card p {
+  font-size: 0.75rem;
+  color: #555;
+  margin: 3px 0;
+  flex: 2;
+}
+
+.projeto-card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.projeto-card a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .lista-projetos {
+    justify-content: center;
+  }
+
+  .projeto {
+    width: 90%;
+  }
+}
 
